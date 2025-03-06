@@ -1,0 +1,6 @@
+@FuneralFlower_BE_HostAddress = http://localhost:5124
+
+GET {{FuneralFlower_BE_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

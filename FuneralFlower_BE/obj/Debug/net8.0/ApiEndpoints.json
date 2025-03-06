@@ -1,0 +1,28 @@
+[
+  {
+    "ContainingType": "FuneralFlower_BE.Controllers.TestController",
+    "Method": "Test",
+    "RelativePath": "api/Test/Test",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "a",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "FuneralFlower_BE.Controllers.BaseController\u002BJsonResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  }
+]
