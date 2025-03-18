@@ -12,9 +12,9 @@ namespace FuneralFlower_BE.Services
 
         public BaseService()
         {
-            AppSettingModel? appSetting = HelperProvider.GetAppSetting("SwayDatabaseConnectionString");
+            AppSettingModel? appSetting = HelperProvider.GetAppSetting("DefaultConnection");
             if (appSetting == null) throw new Exception("Không tìm thấy thông tin kết nối cơ sở dữ liệu.");
-            _connection = new SqlConnection(appSetting.SwayDatabaseConnectionString);
+            _connection = new SqlConnection(appSetting.DefaultConnection);
         }
 
         public BaseService(IDbConnection? connection)
@@ -22,9 +22,9 @@ namespace FuneralFlower_BE.Services
 
             if (connection == null)
             {
-                AppSettingModel? appSetting = HelperProvider.GetAppSetting("SwayDatabaseConnectionString");
+                AppSettingModel? appSetting = HelperProvider.GetAppSetting("DefaultConnection");
                 if (appSetting == null) throw new Exception("Không tìm thấy thông tin kết nối cơ sở dữ liệu.");
-                _connection = new SqlConnection(appSetting.SwayDatabaseConnectionString);
+                _connection = new SqlConnection(appSetting.DefaultConnection);
             }
             else
             {
@@ -35,9 +35,9 @@ namespace FuneralFlower_BE.Services
 
         public static IDbConnection Connect()
         {
-            AppSettingModel? appSetting = HelperProvider.GetAppSetting("SwayDatabaseConnectionString");
+            AppSettingModel? appSetting = HelperProvider.GetAppSetting("DefaultConnection");
             if (appSetting == null) throw new Exception("Không tìm thấy thông tin kết nối cơ sở dữ liệu.");
-            return new SqlConnection(appSetting.SwayDatabaseConnectionString);
+            return new SqlConnection(appSetting.DefaultConnection);
         }
     }
 }

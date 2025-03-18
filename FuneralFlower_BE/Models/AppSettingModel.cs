@@ -2,7 +2,7 @@
 {
     public class AppSettingModel
     {
-        public string? SwayDatabaseConnectionString { get; set; }
+        public string? DefaultConnection { get; set; }
         public string? ENV { get; set; }
     }
 }
