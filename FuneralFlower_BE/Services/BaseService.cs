@@ -39,5 +39,10 @@ namespace FuneralFlower_BE.Services
             if (appSetting == null) throw new Exception("Không tìm thấy thông tin kết nối cơ sở dữ liệu.");
             return new SqlConnection(appSetting.DefaultConnection);
         }
+
+        public void tess()
+        {
+
+        }
     }
 }
