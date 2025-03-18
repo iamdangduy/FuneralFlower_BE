@@ -1,16 +1,7 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\FuneralFlower_BE\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{DFF497AA-351B-4F59-B659-07D617CED948}|FuneralFlower_BE\\FuneralFlower_BE.csproj|d:\\funeralflower_be\\funeralflower_be\\controllers\\testcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DFF497AA-351B-4F59-B659-07D617CED948}|FuneralFlower_BE\\FuneralFlower_BE.csproj|solutionrelative:funeralflower_be\\controllers\\testcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DFF497AA-351B-4F59-B659-07D617CED948}|FuneralFlower_BE\\FuneralFlower_BE.csproj|d:\\funeralflower_be\\funeralflower_be\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DFF497AA-351B-4F59-B659-07D617CED948}|FuneralFlower_BE\\FuneralFlower_BE.csproj|solutionrelative:funeralflower_be\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "WorkspaceRootPath": "E:\\FuneralFlower_BE\\",
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -18,32 +9,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 259,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": -1,
           "Children": [
             {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "TestController.cs",
-              "DocumentMoniker": "D:\\FuneralFlower_BE\\FuneralFlower_BE\\Controllers\\TestController.cs",
-              "RelativeDocumentMoniker": "FuneralFlower_BE\\Controllers\\TestController.cs",
-              "ToolTip": "D:\\FuneralFlower_BE\\FuneralFlower_BE\\Controllers\\TestController.cs",
-              "RelativeToolTip": "FuneralFlower_BE\\Controllers\\TestController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-06T14:50:56.326Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\FuneralFlower_BE\\FuneralFlower_BE\\Program.cs",
-              "RelativeDocumentMoniker": "FuneralFlower_BE\\Program.cs",
-              "ToolTip": "D:\\FuneralFlower_BE\\FuneralFlower_BE\\Program.cs",
-              "RelativeToolTip": "FuneralFlower_BE\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAA3AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-06T14:29:40.035Z"
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e5c86464-96be-4d7c-9a8b-abcb3bbf5f92}"
             }
           ]
         }
