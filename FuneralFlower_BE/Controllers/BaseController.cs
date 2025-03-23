@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace FuneralFlower_BE.Controllers
 {
-    [Route("api/[action]/[controller]")]
+    [Route("api/[controller]/[action]")]
     [ApiController]
     public class BaseController : ControllerBase
     {

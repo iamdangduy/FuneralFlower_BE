@@ -24,5 +24,25 @@
         "StatusCode": 200
       }
     ]
+  },
+  {
+    "ContainingType": "FuneralFlower_BE.Controllers.UserController",
+    "Method": "GetListPost",
+    "RelativePath": "api/User/GetListPost",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "FuneralFlower_BE.Controllers.BaseController\u002BJsonResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   }
 ]

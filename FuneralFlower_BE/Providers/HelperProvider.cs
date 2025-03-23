@@ -21,5 +21,19 @@ namespace FuneralFlower_BE.Providers
             }
             return null;
         }
+
+        public static long GetSeconds(DateTime? dateTime = null)
+        {
+            try
+            {
+                if (!dateTime.HasValue) dateTime = DateTime.UtcNow;
+                var Timestamp = new DateTimeOffset(dateTime.Value).ToUnixTimeMilliseconds();
+                return Timestamp;
+            }
+            catch (Exception ex)
+            {
+                return 0;
+            }
+        }
     }
 }

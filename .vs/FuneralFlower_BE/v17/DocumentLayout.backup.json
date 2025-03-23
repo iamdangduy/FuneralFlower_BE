@@ -1,7 +1,24 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\FuneralFlower_BE\\",
-  "Documents": [],
+  "WorkspaceRootPath": "E:\\FuneralFlower_BE\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{DFF497AA-351B-4F59-B659-07D617CED948}|FuneralFlower_BE\\FuneralFlower_BE.csproj|e:\\funeralflower_be\\funeralflower_be\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFF497AA-351B-4F59-B659-07D617CED948}|FuneralFlower_BE\\FuneralFlower_BE.csproj|solutionrelative:funeralflower_be\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFF497AA-351B-4F59-B659-07D617CED948}|FuneralFlower_BE\\FuneralFlower_BE.csproj|e:\\funeralflower_be\\funeralflower_be\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFF497AA-351B-4F59-B659-07D617CED948}|FuneralFlower_BE\\FuneralFlower_BE.csproj|solutionrelative:funeralflower_be\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFF497AA-351B-4F59-B659-07D617CED948}|FuneralFlower_BE\\FuneralFlower_BE.csproj|e:\\funeralflower_be\\funeralflower_be\\providers\\securityprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFF497AA-351B-4F59-B659-07D617CED948}|FuneralFlower_BE\\FuneralFlower_BE.csproj|solutionrelative:funeralflower_be\\providers\\securityprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFF497AA-351B-4F59-B659-07D617CED948}|FuneralFlower_BE\\FuneralFlower_BE.csproj|e:\\funeralflower_be\\funeralflower_be\\providers\\helperprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFF497AA-351B-4F59-B659-07D617CED948}|FuneralFlower_BE\\FuneralFlower_BE.csproj|solutionrelative:funeralflower_be\\providers\\helperprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,11 +26,63 @@
       "DocumentGroups": [
         {
           "DockedWidth": 259,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 4,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "HelperProvider.cs",
+              "DocumentMoniker": "E:\\FuneralFlower_BE\\FuneralFlower_BE\\Providers\\HelperProvider.cs",
+              "RelativeDocumentMoniker": "FuneralFlower_BE\\Providers\\HelperProvider.cs",
+              "ToolTip": "E:\\FuneralFlower_BE\\FuneralFlower_BE\\Providers\\HelperProvider.cs",
+              "RelativeToolTip": "FuneralFlower_BE\\Providers\\HelperProvider.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-20T02:09:17.803Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "SecurityProvider.cs",
+              "DocumentMoniker": "E:\\FuneralFlower_BE\\FuneralFlower_BE\\Providers\\SecurityProvider.cs",
+              "RelativeDocumentMoniker": "FuneralFlower_BE\\Providers\\SecurityProvider.cs",
+              "ToolTip": "E:\\FuneralFlower_BE\\FuneralFlower_BE\\Providers\\SecurityProvider.cs",
+              "RelativeToolTip": "FuneralFlower_BE\\Providers\\SecurityProvider.cs",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAQwCYAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-20T02:05:11.171Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{e5c86464-96be-4d7c-9a8b-abcb3bbf5f92}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "E:\\FuneralFlower_BE\\FuneralFlower_BE\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "FuneralFlower_BE\\Controllers\\UserController.cs",
+              "ToolTip": "E:\\FuneralFlower_BE\\FuneralFlower_BE\\Controllers\\UserController.cs",
+              "RelativeToolTip": "FuneralFlower_BE\\Controllers\\UserController.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAQwA4AAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-19T07:25:03.926Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UserService.cs",
+              "DocumentMoniker": "E:\\FuneralFlower_BE\\FuneralFlower_BE\\Services\\UserService.cs",
+              "RelativeDocumentMoniker": "FuneralFlower_BE\\Services\\UserService.cs",
+              "ToolTip": "E:\\FuneralFlower_BE\\FuneralFlower_BE\\Services\\UserService.cs",
+              "RelativeToolTip": "FuneralFlower_BE\\Services\\UserService.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA0AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-19T07:17:09.603Z",
+              "EditorCaption": ""
             }
           ]
         }

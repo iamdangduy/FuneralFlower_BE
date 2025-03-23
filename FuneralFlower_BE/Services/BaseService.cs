@@ -1,6 +1,5 @@
 ﻿using System.Data;
 using Microsoft.Data.SqlClient;
-using System.Configuration;
 using FuneralFlower_BE.Models;
 using FuneralFlower_BE.Providers;
 
@@ -40,9 +39,5 @@ namespace FuneralFlower_BE.Services
             return new SqlConnection(appSetting.DefaultConnection);
         }
 
-        public void tess()
-        {
-
-        }
     }
 }
