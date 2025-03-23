@@ -7,7 +7,6 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace FuneralFlower_BE.Controllers
 {
-    [AllowAnonymous]
     public class UserController : BaseController
     {
         [HttpPost]
@@ -73,6 +72,7 @@ namespace FuneralFlower_BE.Controllers
 
                         User user = new User();
                         user.Id = Guid.NewGuid().ToString();
+                        user.UserName = userRequest.UserName;
                         user.Password = SecurityProvider.EncodePassword(user.Id, userRequest.Password);
 
                         if (!string.IsNullOrEmpty(user.Email))
