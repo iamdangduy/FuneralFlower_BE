@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FuneralFlower_BE")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+602939e59e88214af0c40d427b6feef85eebf9e5")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8e68bfd47e0354f6ad68e5e7bd16b8a20f7d4401")]
 [assembly: System.Reflection.AssemblyProductAttribute("FuneralFlower_BE")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FuneralFlower_BE")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
