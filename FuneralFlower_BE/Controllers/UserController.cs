@@ -7,10 +7,10 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace FuneralFlower_BE.Controllers
 {
+    [AllowAnonymous]
     public class UserController : BaseController
     {
         [HttpPost]
-        [AllowAnonymous]
         public JsonResponse Login(UserLoginModel model)
         {
             try
@@ -23,7 +23,7 @@ namespace FuneralFlower_BE.Controllers
                         if (string.IsNullOrEmpty(model.UserName) || string.IsNullOrEmpty(model.Password)) return Error(JsonResponse.Message.LOGIN_ACCOUNT_OR_PASSWORD_EMPTY);
                         UserService userService = new UserService(connect);
 
-                        User userLogin = userService.GetUserByOrPhoneOrAccount(model.UserName, transaction);
+                        User? userLogin = userService.GetUserByOrPhoneOrAccount(model.UserName, transaction);
                         if (userLogin == null) throw new Exception(JsonResponse.Message.LOGIN_ACCOUNT_OR_PASSWORD_INCORRECT);
 
                         string password = SecurityProvider.EncodePassword(userLogin.Id, model.Password);
@@ -52,7 +52,6 @@ namespace FuneralFlower_BE.Controllers
         }
 
         [HttpPost]
-        [AllowAnonymous]
         public JsonResponse Register(User userRequest)
         {
             try
@@ -77,12 +76,12 @@ namespace FuneralFlower_BE.Controllers
 
                         if (!string.IsNullOrEmpty(user.Email))
                         {
-                            user.Email = userRequest.Email.Trim();
+                            user.Email = userRequest.Email?.Trim();
                         }
 
                         if (!string.IsNullOrEmpty(user.Email))
                         {
-                            user.Phone = userRequest.Phone.Trim();
+                            user.Phone = userRequest.Phone?.Trim();
                         }
 
                         userService.InsertUser(user, transaction);
@@ -92,6 +91,22 @@ namespace FuneralFlower_BE.Controllers
                         return Success();
                     }
                 }
+            }
+            catch (Exception ex)
+            {
+                return Error(ex.Message);
+            }
+        }
+ 
+        [HttpGet]
+        public JsonResponse Logout()
+        {
+            try
+            {
+                string token = Request.Headers.Authorization.ToString();
+                UserService userService = new UserService();
+                userService.RemoveUserToken(token);
+                return Success();
             }
             catch (Exception ex)
             {

@@ -1,5 +1,7 @@
 ﻿using FuneralFlower_BE.Models;
 using Newtonsoft.Json;
+using System.Drawing;
+using System.Drawing.Drawing2D;
 
 namespace FuneralFlower_BE.Providers
 {
@@ -33,6 +35,58 @@ namespace FuneralFlower_BE.Providers
             catch (Exception ex)
             {
                 return 0;
+            }
+        }
+
+        public static void Base64ToImage(string base64String, string pathToSave, int maxWidth = 1024, int maxHeight = 1024)
+        {
+            try
+            {
+                // Tách đường dẫn
+                List<string> listPartFolder = pathToSave.Split(Path.DirectorySeparatorChar).ToList();
+                listPartFolder.RemoveAt(listPartFolder.Count - 1);
+                string director = string.Join(Path.DirectorySeparatorChar.ToString(), listPartFolder);
+
+                // Tạo thư mục nếu không tồn tại
+                if (!Directory.Exists(director))
+                {
+                    Directory.CreateDirectory(director);
+                }
+
+                // Chuyển đổi Base64 thành byte[]
+                byte[] imageBytes = Convert.FromBase64String(base64String);
+
+                // Chuyển đổi byte[] thành Image
+                using (var ms = new MemoryStream(imageBytes))
+                {
+                    using (var image = Image.FromStream(ms))
+                    {
+                        // Tính toán kích thước mới
+                        var ratioX = maxWidth >= image.Width ? 1 : (double)maxWidth / image.Width;
+                        var ratioY = maxHeight >= image.Height ? 1 : (double)maxHeight / image.Height;
+                        var ratio = Math.Min(ratioX, ratioY);
+                        var newWidth = (int)(image.Width * ratio);
+                        var newHeight = (int)(image.Height * ratio);
+
+                        // Tạo hình ảnh mới
+                        using (var newImage = new Bitmap(newWidth, newHeight))
+                        {
+                            using (var thumbGraph = Graphics.FromImage(newImage))
+                            {
+                                thumbGraph.CompositingQuality = CompositingQuality.HighQuality;
+                                thumbGraph.SmoothingMode = SmoothingMode.HighQuality;
+                                thumbGraph.DrawImage(image, 0, 0, newWidth, newHeight);
+                            }
+
+                            // Lưu hình ảnh
+                            newImage.Save(pathToSave);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new InvalidOperationException("Error converting Base64 to image.", ex);
             }
         }
     }

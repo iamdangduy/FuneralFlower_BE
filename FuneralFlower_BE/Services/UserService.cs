@@ -46,5 +46,18 @@ namespace FuneralFlower_BE.Services
             int status = this._connection.Execute(query, user, transaction);
             if (status <= 0) throw new Exception(JsonResponse.Message.ERROR_SYSTEM);
         }
+
+        public void RemoveUserToken(string token, IDbTransaction? transaction = null)
+        {
+            string query = "update [usertoken] set Token=NULL where Token=@token";
+            int status = this._connection.Execute(query, new { token = token }, transaction);
+            if (status <= 0) throw new Exception(JsonResponse.Message.ERROR_SYSTEM);
+        }
+
+        public User? GetUserByToken(string Token, IDbTransaction? transaction = null)
+        {
+            string query = "select u.* from [user] u join [usertoken] ut on u.Id = ut.UserId where ut.Token = @Token";
+            return this._connection.Query<User>(query, new { Token }, transaction).FirstOrDefault();
+        }
     }
 }
