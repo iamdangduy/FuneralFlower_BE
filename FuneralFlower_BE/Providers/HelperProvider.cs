@@ -89,5 +89,26 @@ namespace FuneralFlower_BE.Providers
                 throw new InvalidOperationException("Error converting Base64 to image.", ex);
             }
         }
+
+        public static bool DeleteFile(string path, IWebHostEnvironment hostingEnvironment)
+        {
+            try
+            {
+                // Lấy đường dẫn đầy đủ
+                var fullPath = Path.Combine(hostingEnvironment.ContentRootPath, path);
+
+                // Xóa ảnh cũ
+                if (File.Exists(fullPath))
+                {
+                    File.Delete(fullPath);
+                }
+                return true;
+            }
+            catch (Exception ex)
+            {
+                // Ghi log hoặc xử lý lỗi nếu cần
+                return false;
+            }
+        }
     }
 }

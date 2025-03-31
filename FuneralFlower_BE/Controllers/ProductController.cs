@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Hosting;
 using System.IO;
+using Microsoft.Extensions.Hosting;
 
 namespace FuneralFlower_BE.Controllers
 {
@@ -17,11 +18,11 @@ namespace FuneralFlower_BE.Controllers
             _hostingEnvironment = hostingEnvironment;
         }
 
-        public string GetImagePath(string filename)
-        {
-            var path = Path.Combine(_hostingEnvironment.ContentRootPath, Constant.PATH.PRODUCT_IMAGE_PATH, filename);
-            return path;
-        }
+        //public string GetImagePath(string filename)
+        //{
+        //    var path = Path.Combine(_hostingEnvironment.ContentRootPath, Constant.PATH.PRODUCT_IMAGE_PATH, filename);
+        //    return path;
+        //}
 
         [HttpGet]
         public JsonResponse GetListProduct()
@@ -53,12 +54,32 @@ namespace FuneralFlower_BE.Controllers
                 product.ProductOldPrice = model.ProductOldPrice;
                 product.ProductNewPrice = model.ProductNewPrice;
                 product.Description = model.Description;
+                //if (!string.IsNullOrEmpty(model.ProductImageUrl))
+                //{
+                //    string filename = Guid.NewGuid().ToString() + ".jpg";
+                //    var path = GetImagePath(Constant.PATH.PRODUCT_IMAGE_PATH + filename);
+                //    HelperProvider.Base64ToImage(model.ProductImageUrl, path);
+                //    product.ProductImageUrl = Constant.PATH.PRODUCT_IMAGE_URL + filename;
+                //}
+
                 if (!string.IsNullOrEmpty(model.ProductImageUrl))
                 {
                     string filename = Guid.NewGuid().ToString() + ".jpg";
-                    var path = GetImagePath(Constant.PATH.PRODUCT_IMAGE_PATH + filename);
+
+                    // Sử dụng IHostingEnvironment để lấy đường dẫn
+                    var path = Path.Combine(_hostingEnvironment.ContentRootPath, Constant.PATH.PRODUCT_IMAGE_PATH, filename);
+
+                    // Gọi hàm chuyển đổi Base64 sang hình ảnh
                     HelperProvider.Base64ToImage(model.ProductImageUrl, path);
-                    product.ProductImageUrl = Constant.PATH.PRODUCT_IMAGE_URL + filename;
+
+                    // Kiểm tra và xóa file cũ
+                    if (!HelperProvider.DeleteFile(product.ProductImageUrl, _hostingEnvironment))
+                    {
+                        return Error();
+                    }
+
+                    // Cập nhật đường dẫn hình ảnh
+                    product.ProductImageUrl = Constant.PATH.PRODUCT_IMAGE_PATH + filename;
                 }
                 product.CreateTime = HelperProvider.GetSeconds();
                 productService.InsertProduct(product);
