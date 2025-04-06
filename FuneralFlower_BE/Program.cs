@@ -29,9 +29,8 @@ namespace FuneralFlower_BE
 );
             app.UseStaticFiles();
             app.UseHttpsRedirection();
-
             app.UseAuthorization();
-
+            app.UseAuthentication();
 
             app.MapControllers();
 

@@ -190,3 +190,8 @@ E:\FuneralFlower_BE\FuneralFlower_BE\obj\Debug\net8.0\refint\FuneralFlower_BE.dl
 E:\FuneralFlower_BE\FuneralFlower_BE\obj\Debug\net8.0\FuneralFlower_BE.pdb
 E:\FuneralFlower_BE\FuneralFlower_BE\obj\Debug\net8.0\FuneralFlower_BE.genruntimeconfig.cache
 E:\FuneralFlower_BE\FuneralFlower_BE\obj\Debug\net8.0\ref\FuneralFlower_BE.dll
+D:\FuneralFlower_BE\FuneralFlower_BE\bin\Debug\net8.0\Microsoft.Extensions.ObjectPool.dll
+D:\FuneralFlower_BE\FuneralFlower_BE\bin\Debug\net8.0\Microsoft.Win32.SystemEvents.dll
+D:\FuneralFlower_BE\FuneralFlower_BE\bin\Debug\net8.0\System.Drawing.Common.dll
+D:\FuneralFlower_BE\FuneralFlower_BE\bin\Debug\net8.0\System.Private.Windows.Core.dll
+D:\FuneralFlower_BE\FuneralFlower_BE\bin\Debug\net8.0\runtimes\win\lib\net8.0\Microsoft.Win32.SystemEvents.dll
