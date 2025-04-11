@@ -115,10 +115,10 @@ namespace FuneralFlower_BE.Controllers
         {
             try
             {
-                UserService userService = new UserService();
-                string token = Request.Headers.Authorization.ToString();
-                User? user = userService.GetUserByToken(token);
-                if (user == null) return Unauthorized();
+                //UserService userService = new UserService();
+                //string token = Request.Headers.Authorization.ToString();
+                //User? user = userService.GetUserByToken(token);
+                //if (user == null) return Unauthorized();
 
                 ProductService productService = new ProductService();
                 productService.DeleteProduct(Id);
