@@ -195,3 +195,4 @@ E:\FuneralFlower_BE\FuneralFlower_BE\obj\Debug\net8.0\refint\FuneralFlower_BE.dl
 E:\FuneralFlower_BE\FuneralFlower_BE\obj\Debug\net8.0\FuneralFlower_BE.pdb
 E:\FuneralFlower_BE\FuneralFlower_BE\obj\Debug\net8.0\FuneralFlower_BE.genruntimeconfig.cache
 E:\FuneralFlower_BE\FuneralFlower_BE\obj\Debug\net8.0\ref\FuneralFlower_BE.dll
+E:\FuneralFlower_BE\FuneralFlower_BE\bin\Debug\net8.0\FuneralFlower_BE.staticwebassets.runtime.json

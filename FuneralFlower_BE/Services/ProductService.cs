@@ -1,8 +1,6 @@
 ﻿using Dapper;
 using FuneralFlower_BE.Models;
 using System.Data;
-using System.Numerics;
-using System.Transactions;
 using static FuneralFlower_BE.Controllers.BaseController;
 
 namespace FuneralFlower_BE.Services
@@ -15,6 +13,12 @@ namespace FuneralFlower_BE.Services
         public List<Product> GetListProduct(IDbTransaction? transaction = null)
         {
             string query = "select * from [product]";
+            return this._connection.Query<Product>(query, transaction).ToList();
+        }
+        
+        public List<Product> GetListPreviewProduct(IDbTransaction? transaction = null)
+        {
+            string query = "select TOP (10) * from [product]";
             return this._connection.Query<Product>(query, transaction).ToList();
         }
 

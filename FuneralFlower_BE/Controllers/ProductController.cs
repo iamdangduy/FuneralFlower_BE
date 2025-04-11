@@ -2,10 +2,6 @@
 using FuneralFlower_BE.Providers;
 using FuneralFlower_BE.Services;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Hosting;
-using System.IO;
-using Microsoft.Extensions.Hosting;
 
 namespace FuneralFlower_BE.Controllers
 {
@@ -17,12 +13,6 @@ namespace FuneralFlower_BE.Controllers
         {
             _hostingEnvironment = hostingEnvironment;
         }
-
-        //public string GetImagePath(string filename)
-        //{
-        //    var path = Path.Combine(_hostingEnvironment.ContentRootPath, Constant.PATH.PRODUCT_IMAGE_PATH, filename);
-        //    return path;
-        //}
 
         [HttpGet]
         public JsonResponse GetListProduct()
@@ -38,6 +28,24 @@ namespace FuneralFlower_BE.Controllers
             }
         }
 
+        [HttpGet]
+        public JsonResponse GetListPreviewProduct()
+        {
+            try
+            {
+                UserService userService = new UserService();
+                ProductService productService = new ProductService();
+                string token = Request.Headers.Authorization.ToString();
+                User? user = userService.GetUserByToken(token);
+                if (user == null) return Unauthorized();
+                return Success(productService.GetListPreviewProduct());
+            }
+            catch (Exception ex)
+            {
+                return Error(ex.Message);
+            }
+        }
+
         [HttpPost]
         public JsonResponse InsertProduct(Product model)
         {
@@ -46,7 +54,7 @@ namespace FuneralFlower_BE.Controllers
                 UserService userService = new UserService();
                 string token = Request.Headers.Authorization.ToString();
                 User? user = userService.GetUserByToken(token);
-                if (user == null) return Unauthorized();
+                //if (user == null) return Unauthorized();
                 ProductService productService = new ProductService();
                 Product product = new Product();
                 product.Id = Guid.NewGuid().ToString();
@@ -54,33 +62,14 @@ namespace FuneralFlower_BE.Controllers
                 product.ProductOldPrice = model.ProductOldPrice;
                 product.ProductNewPrice = model.ProductNewPrice;
                 product.Description = model.Description;
-                //if (!string.IsNullOrEmpty(model.ProductImageUrl))
-                //{
-                //    string filename = Guid.NewGuid().ToString() + ".jpg";
-                //    var path = GetImagePath(Constant.PATH.PRODUCT_IMAGE_PATH + filename);
-                //    HelperProvider.Base64ToImage(model.ProductImageUrl, path);
-                //    product.ProductImageUrl = Constant.PATH.PRODUCT_IMAGE_URL + filename;
-                //}
-
                 if (!string.IsNullOrEmpty(model.ProductImageUrl))
                 {
                     string filename = Guid.NewGuid().ToString() + ".jpg";
-
-                    // Sử dụng IHostingEnvironment để lấy đường dẫn
-                    var path = Path.Combine(_hostingEnvironment.ContentRootPath, Constant.PATH.PRODUCT_IMAGE_PATH, filename);
-
-                    // Gọi hàm chuyển đổi Base64 sang hình ảnh
+                    var path = _hostingEnvironment.WebRootPath + Constant.PATH.PRODUCT_IMAGE_PATH + filename;
                     HelperProvider.Base64ToImage(model.ProductImageUrl, path);
-
-                    // Kiểm tra và xóa file cũ
-                    if (!HelperProvider.DeleteFile(product.ProductImageUrl, _hostingEnvironment))
-                    {
-                        return Error();
-                    }
-
-                    // Cập nhật đường dẫn hình ảnh
-                    product.ProductImageUrl = Constant.PATH.PRODUCT_IMAGE_PATH + filename;
+                    product.ProductImageUrl = Constant.PATH.PRODUCT_IMAGE_URL + filename;
                 }
+
                 product.CreateTime = HelperProvider.GetSeconds();
                 productService.InsertProduct(product);
 

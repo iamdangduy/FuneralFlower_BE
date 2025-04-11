@@ -27,6 +27,26 @@
   },
   {
     "ContainingType": "FuneralFlower_BE.Controllers.ProductController",
+    "Method": "GetListPreviewProduct",
+    "RelativePath": "api/Product/GetListPreviewProduct",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "FuneralFlower_BE.Controllers.BaseController\u002BJsonResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "FuneralFlower_BE.Controllers.ProductController",
     "Method": "GetListProduct",
     "RelativePath": "api/Product/GetListProduct",
     "HttpMethod": "GET",

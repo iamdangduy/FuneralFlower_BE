@@ -59,7 +59,7 @@
             public const string COVERPHOTO_USER_PATH = "~/files/cover/";
 
             public const string PRODUCT_IMAGE_URL = "/files/product/";
-            public const string PRODUCT_IMAGE_PATH = "~/files/product/";
+            public const string PRODUCT_IMAGE_PATH = "\\files\\product\\";
 
             public const string QUEUE_GIVE_QUEST_TRANSACTION_IMAGE_URL = "/files/trasaction/{0}/";//{0} : userId
         }

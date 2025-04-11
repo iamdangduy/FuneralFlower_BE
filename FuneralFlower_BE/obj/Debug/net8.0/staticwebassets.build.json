@@ -1,12 +1,20 @@
 {
   "Version": 1,
-  "Hash": "pDTVOLDNifePDZ2BWrusJkDFDzk0ulXzAFZyCmNxNuY=",
+  "Hash": "XQO5TjMU2Bpam4H5B01DXyQAw+WCRdFh84m8qChK078=",
   "Source": "FuneralFlower_BE",
   "BasePath": "_content/FuneralFlower_BE",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "FuneralFlower_BE\\wwwroot",
+      "Source": "FuneralFlower_BE",
+      "ContentRoot": "E:\\FuneralFlower_BE\\FuneralFlower_BE\\wwwroot\\",
+      "BasePath": "_content/FuneralFlower_BE",
+      "Pattern": "**"
+    }
+  ],
   "Assets": [],
   "Endpoints": []
 }

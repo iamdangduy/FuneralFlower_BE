@@ -1,0 +1,29 @@
+{
+  "Files": [
+    {
+      "Id": "E:\\FuneralFlower_BE\\FuneralFlower_BE\\wwwroot\\files\\product\\1aebb241-d19a-4d85-9b99-4f2913ad7f69.jpg",
+      "PackagePath": "staticwebassets\\files\\product\\1aebb241-d19a-4d85-9b99-4f2913ad7f69.jpg"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.FuneralFlower_BE.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.FuneralFlower_BE.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.FuneralFlower_BE.props",
+      "PackagePath": "build\\FuneralFlower_BE.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.FuneralFlower_BE.props",
+      "PackagePath": "buildMultiTargeting\\FuneralFlower_BE.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.FuneralFlower_BE.props",
+      "PackagePath": "buildTransitive\\FuneralFlower_BE.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
