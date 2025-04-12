@@ -46,6 +46,20 @@ namespace FuneralFlower_BE.Controllers
             }
         }
 
+        [HttpGet]
+        public JsonResponse GetProductById(string Id)
+        {
+            try
+            {
+                ProductService productService = new ProductService();
+                return Success(productService.GetById(Id));
+            }
+            catch (Exception ex)
+            {
+                return Error(ex.Message);
+            }
+        }
+
         [HttpPost]
         public JsonResponse InsertProduct(Product model)
         {

@@ -32,7 +32,7 @@ namespace FuneralFlower_BE.Services
 
         public Product? GetById(string Id, IDbTransaction? transaction = null)
         {
-            string query = "select * from [dbo].[product] where Id = @Id";
+            string query = "select * from [product] where Id = @Id";
             return this._connection.Query<Product>(query, new { Id = Id }, transaction).FirstOrDefault();
         }
 
