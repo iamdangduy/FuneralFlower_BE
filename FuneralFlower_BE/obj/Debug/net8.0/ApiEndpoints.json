@@ -188,5 +188,31 @@
         "StatusCode": 200
       }
     ]
+  },
+  {
+    "ContainingType": "FuneralFlower_BE.Controllers.UserTokenController",
+    "Method": "CheckUserByCookie",
+    "RelativePath": "api/UserToken/CheckUserByCookie",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "cookie",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "FuneralFlower_BE.Controllers.BaseController\u002BJsonResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   }
 ]

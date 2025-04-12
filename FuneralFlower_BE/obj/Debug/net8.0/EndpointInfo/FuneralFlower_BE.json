@@ -321,6 +321,44 @@
           }
         }
       }
+    },
+    "/api/UserToken/CheckUserByCookie": {
+      "get": {
+        "tags": [
+          "UserToken"
+        ],
+        "parameters": [
+          {
+            "name": "cookie",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/JsonResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JsonResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JsonResponse"
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
