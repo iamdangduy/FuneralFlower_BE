@@ -33,11 +33,11 @@ namespace FuneralFlower_BE.Controllers
         {
             try
             {
-                UserService userService = new UserService();
                 ProductService productService = new ProductService();
-                string token = Request.Headers.Authorization.ToString();
-                User? user = userService.GetUserByToken(token);
-                if (user == null) return Unauthorized();
+                //UserService userService = new UserService();
+                //string token = Request.Headers.Authorization.ToString();
+                //User? user = userService.GetUserByToken(token);
+                //if (user == null) return Unauthorized();
                 return Success(productService.GetListPreviewProduct());
             }
             catch (Exception ex)
