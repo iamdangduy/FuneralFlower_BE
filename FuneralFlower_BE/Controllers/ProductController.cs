@@ -34,10 +34,13 @@ namespace FuneralFlower_BE.Controllers
             try
             {
                 ProductService productService = new ProductService();
+<<<<<<< Updated upstream
                 //UserService userService = new UserService();
                 //string token = Request.Headers.Authorization.ToString();
                 //User? user = userService.GetUserByToken(token);
                 //if (user == null) return Unauthorized();
+=======
+>>>>>>> Stashed changes
                 return Success(productService.GetListPreviewProduct());
             }
             catch (Exception ex)
