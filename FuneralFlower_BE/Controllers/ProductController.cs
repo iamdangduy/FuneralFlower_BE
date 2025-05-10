@@ -2,6 +2,7 @@
 using FuneralFlower_BE.Providers;
 using FuneralFlower_BE.Services;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Hosting;
 
 namespace FuneralFlower_BE.Controllers
 {
@@ -98,9 +99,9 @@ namespace FuneralFlower_BE.Controllers
             try
             {
                 UserService userService = new UserService();
-                string token = Request.Headers.Authorization.ToString();
-                User? user = userService.GetUserByToken(token);
-                if (user == null) return Unauthorized();
+                //string token = Request.Headers.Authorization.ToString();
+                //User? user = userService.GetUserByToken(token);
+                //if (user == null) return Unauthorized();
                 ProductService productService = new ProductService();
                 var oldProduct = productService.GetById(model.Id);
 
@@ -108,9 +109,15 @@ namespace FuneralFlower_BE.Controllers
                 oldProduct.ProductOldPrice = model.ProductOldPrice;
                 oldProduct.ProductNewPrice = model.ProductNewPrice;
                 oldProduct.Description = model.Description;
-                oldProduct.ProductImageUrl = model.ProductImageUrl;
                 oldProduct.ProductCategoryId = model.ProductCategoryId;
-
+                if (!string.IsNullOrEmpty(model.ProductImageUrl))
+                {
+                    string filename = Guid.NewGuid().ToString() + ".jpg";
+                    var path = _hostingEnvironment.WebRootPath + Constant.PATH.PRODUCT_IMAGE_PATH + filename;
+                    HelperProvider.Base64ToImage(model.ProductImageUrl, path);
+                    //if (!HelperProvider.DeleteFile(oldProduct.ProductImageUrl, _hostingEnvironment)) return Error();
+                    oldProduct.ProductImageUrl = Constant.PATH.PRODUCT_IMAGE_URL + filename;
+                }
                 productService.UpdateProduct(oldProduct);
 
                 return Success();

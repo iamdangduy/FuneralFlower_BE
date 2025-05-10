@@ -4,3 +4,4 @@ obj/
 FuneralFlower_BE/appsettings.json
 FuneralFlower_BE/bin/Debug/net8.0/FuneralFlower_BE.staticwebassets.runtime.json
 FuneralFlower_BE/bin/Debug/net8.0/appsettings.json
+/FuneralFlower_BE/bin/Debug
