@@ -12,20 +12,20 @@ namespace FuneralFlower_BE.Services
 
         public List<Product> GetListProduct(IDbTransaction? transaction = null)
         {
-            string query = "select * from [product]";
+            string query = "select * from [product] order by CreateTime desc";
             return this._connection.Query<Product>(query, transaction).ToList();
         }
         
         public List<Product> GetListPreviewProduct(IDbTransaction? transaction = null)
         {
-            string query = "select TOP (10) * from [product]";
+            string query = "select TOP (10) * from [product] order by CreateTime desc";
             return this._connection.Query<Product>(query, transaction).ToList();
         }
 
         public void InsertProduct(Product product, IDbTransaction? transaction = null)
         {
-            string query = "INSERT INTO [dbo].[product] ([Id], [ProductName], [ProductOldPrice], [ProductNewPrice], [Description], [ProductImageUrl], [ProductCategoryId]) " +
-                "VALUES (@Id, @ProductName, @ProductOldPrice, @ProductNewPrice, @Description, @ProductImageUrl, @ProductCategoryId)";
+            string query = "INSERT INTO [dbo].[product] ([Id], [ProductName], [ProductOldPrice], [ProductNewPrice], [Description], [ProductImageUrl], [ProductCategoryId], [CreateTime]) " +
+                "VALUES (@Id, @ProductName, @ProductOldPrice, @ProductNewPrice, @Description, @ProductImageUrl, @ProductCategoryId, @CreateTime)";
             int status = this._connection.Execute(query, product, transaction);
             if (status <= 0) throw new Exception(JsonResponse.Message.ERROR_SYSTEM);
         }
