@@ -2,6 +2,7 @@ appsettings.json
 .vs/
 obj/
 FuneralFlower_BE/appsettings.json
-FuneralFlower_BE/bin/Debug/net8.0/FuneralFlower_BE.staticwebassets.runtime.json
-FuneralFlower_BE/bin/Debug/net8.0/appsettings.json
-/FuneralFlower_BE/bin/Debug
+*/**/bin/Debug
+*/**/bin/Release
+*/**/obj/Debug
+*/**/obj/Release
