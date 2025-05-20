@@ -13,7 +13,7 @@ namespace FuneralFlower_BE.Services
 
         public List<News> GetListNews(IDbTransaction? transaction = null)
         {
-            string query = "select * from [news] order by CreateTime desc";
+            string query = "select [Id], [Title], [TitleImageUrl] from [news] order by CreateTime desc";
             return this._connection.Query<News>(query, transaction).ToList();
         }
 
